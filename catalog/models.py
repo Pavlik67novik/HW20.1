@@ -37,7 +37,7 @@ class Product(models.Model):
         max_length=30, verbose_name="Дата последнего изменения", help_text="Записи в БД"
     )
     photo = models.ImageField(
-        upload_to="product/photo",
+        upload_to="photo",
         blank=True,
         null=True,
         verbose_name="Изображение",
@@ -54,6 +54,7 @@ class Product(models.Model):
         blank=True,
         related_name="products",
     )
+    manufactured_at = models.DateField(auto_now_add=True)
 
 
 class Meta:
