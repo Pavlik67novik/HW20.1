@@ -10,6 +10,7 @@ packages = [{include = "hw20"}]
 python = "^3.12"
 django = "^5.0.7"
 black = "^24.4.2"
+psycopg2-binary = "^2.9.9"
 
 
 [build-system]
