@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "hw20-1"
+version = "0.1.0"
+description = ""
+authors = ["Pavel Novikov <pavlik.novik@yandex.ru>"]
+readme = "README.md"
+packages = [{include = "hw20"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.0.7"
+black = "^24.4.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
