@@ -1,18 +1,21 @@
 from django.core.management import BaseCommand
 import json
 
+from catalog.models import Category, Product
+
+
 class Command(BaseCommand):
 
     @staticmethod
     def json_read_categories():
         # Получаем данные из фикстуры с категориями
-        with open('category.json', encoding='utf-8') as file:
+        with open('category_data.json', encoding='utf-8') as file:
             return json.load(file)
 
     @staticmethod
     def json_read_products():
         # Получаем данные из фикстуры с продуктами
-        with open('product.json', encoding='utf-8') as file:
+        with open('product_data.json', encoding='utf-8') as file:
             return json.load(file)
 
     def handle(self, *args, **options):
