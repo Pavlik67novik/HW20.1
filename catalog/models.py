@@ -7,8 +7,7 @@ class Category(models.Model):
         verbose_name="Наименование категории",
         help_text="Введите наименование категории",
     )
-    purpose = models.CharField(
-        max_length=30,
+    purpose = models.TextField(
         verbose_name="Описание категории",
         help_text="Введите описание категории",
         blank=True,
@@ -27,14 +26,14 @@ class Product(models.Model):
     name = models.CharField(
         max_length=30, verbose_name="Наименование", help_text="Наименование товара"
     )
-    description = models.CharField(
-        max_length=10, verbose_name="Описание", help_text="Описание товара"
+    description = models.TextField(
+        verbose_name="Описание", help_text="Описание товара"
     )
-    created_add = models.DateField(
-        max_length=30, verbose_name="Дата создания", help_text="Записи в БД"
+    created_add = models.DateTimeField(
+        auto_now_add=False, verbose_name="Дата создания", help_text="Записи в БД"
     )
-    updated_ad = models.DateField(
-        max_length=30, verbose_name="Дата последнего изменения", help_text="Записи в БД")
+    updated_ad = models.DateTimeField(
+        auto_now=False, verbose_name="Дата последнего изменения", help_text="Записи в БД")
     photo = models.ImageField(
         upload_to="photo",
         blank=True,
