@@ -29,11 +29,11 @@ class Product(models.Model):
     description = models.TextField(
         verbose_name="Описание", help_text="Описание товара"
     )
-    created_add = models.DateTimeField(
-        auto_now_add=False, verbose_name="Дата создания", help_text="Записи в БД"
+    created_at = models.DateTimeField(
+        auto_now_add=True, verbose_name="Дата создания", help_text="Записи в БД"
     )
-    updated_ad = models.DateTimeField(
-        auto_now=False, verbose_name="Дата последнего изменения", help_text="Записи в БД")
+    updated_at = models.DateTimeField(
+        auto_now=True, verbose_name="Дата последнего изменения", help_text="Записи в БД")
     photo = models.ImageField(
         upload_to="photo",
         blank=True,
@@ -41,8 +41,8 @@ class Product(models.Model):
         verbose_name="Изображение",
         help_text="Загрузите фото товара",
     )
-    price_product = models.IntegerField(
-        verbose_name="Цена", help_text="Цена товара"
+    price_product = models.PositiveIntegerField(
+        help_text="Цена товара"
     )
     category = models.ForeignKey(
         Category,
@@ -51,7 +51,7 @@ class Product(models.Model):
         null=True,
         blank=True,
         related_name="products",)
-    manufactured_at = models.DateField(auto_now_add=True)
+
 
 
 class Meta:
